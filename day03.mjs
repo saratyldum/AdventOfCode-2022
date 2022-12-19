@@ -44,11 +44,30 @@ function part1() {
 
 
 function part2() {
-  const input = getInput();
-  //do something here
+  const lines = getInput();
+
+	let sum = 0;
+
+	for (let i = 0; i < lines.length; i+=3) {
+		const backpacks = [[... lines[i]], [... lines[i + 1]], [...lines[i + 2]]];
+
+		//finds common letter in backpack 1 og 2
+		let set = new Set(backpacks[0]);
+		let intersection = backpacks[1].filter((x) => set.has(x));
+
+		//compares the last backpack with the others
+		set = new Set(intersection);
+		intersection = backpacks[2].filter((x) => set.has(x));
+
+		//deduplication
+		const dedup = [... new Set(intersection)];
+
+		sum +=letterToPriority(dedup[0])
+	}
+	console.log(sum);
 }
 
-part1();
+// part1();
 part2();
 
 // FOR Å RUNNE SKRIV NODE 03.MJS I TERMINAL
