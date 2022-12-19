@@ -12,7 +12,7 @@ function getInput() {
 }
 
 function letterToPriority(letter) {
-	//regEx
+	//regExp.prototype.t4est -- LES OM
 	if (/[a-z]/.test(letter)) {
 		//lowercase
 		return letter.charCodeAt(0)-96;
