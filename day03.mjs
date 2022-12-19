@@ -12,6 +12,7 @@ function getInput() {
 }
 
 function letterToPriority(letter) {
+	//regEx
 	if (/[a-z]/.test(letter)) {
 		//lowercase
 		return letter.charCodeAt(0)-96;
@@ -51,11 +52,11 @@ function part2() {
 	for (let i = 0; i < lines.length; i+=3) {
 		const backpacks = [[... lines[i]], [... lines[i + 1]], [...lines[i + 2]]];
 
-		//finds common letter in backpack 1 og 2
+		//finds common letter in backpack [0] og [1]
 		let set = new Set(backpacks[0]);
 		let intersection = backpacks[1].filter((x) => set.has(x));
 
-		//compares the last backpack with the others
+		//compares the last backpack with the common letters in the first twp backpacks
 		set = new Set(intersection);
 		intersection = backpacks[2].filter((x) => set.has(x));
 
