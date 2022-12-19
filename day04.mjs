@@ -1,9 +1,11 @@
 import { readFileSync } from "node:fs";
 
-const lines = readFileSync("day??.txt", { encoding: "utf-8" }) // read day??.txt content
+const lines = readFileSync("day04.txt", { encoding: "utf-8" }) // read day??.txt content
   .replace(/\r/g, "") // remove all \r characters to avoid issues on Windows
   .trim() // Remove starting/ending whitespace
   .split("\n"); // Split on newline
+
+	console.log(lines);
 
 // Return a new object to avoid side effects between part 1 and 2
 function getInput() {
@@ -12,6 +14,7 @@ function getInput() {
 
 function part1() {
   const input = getInput();
+	
   //do something here
 }
 
